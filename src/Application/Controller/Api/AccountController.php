@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AccountController extends AbstractController
 {
-    #[Route('/accounts', name: 'account_list', methods: ['GET'])]
+    //#[Route('/accounts', name: 'account_list', methods: ['GET'])]
     public function index(AccountRepository $repository): JsonResponse
     {
         $accounts = $repository->findAll();
@@ -21,7 +21,7 @@ class AccountController extends AbstractController
         ]);
     }
 
-    #[Route('/accounts/{id}', name: 'account_find', methods: ['GET'])]
+    //#[Route('/accounts/{id}', name: 'account_find', methods: ['GET'])]
     public function get(int $id, AccountRepository $repository): JsonResponse
     {
         $account = $repository->find($id);
@@ -33,7 +33,7 @@ class AccountController extends AbstractController
         ]);
     }
 
-    #[Route('/accounts', name: 'account_create', methods: ['POST'])]
+    //#[Route('/accounts', name: 'account_create', methods: ['POST'])]
     public function create(Request $request, AccountRepository $repository): JsonResponse
     {
         $data = $request->toArray();
@@ -51,7 +51,7 @@ class AccountController extends AbstractController
         ], 201);
     }
 
-    #[Route('/accounts/{id}', name: 'account_update', methods: ['PUT', 'PATCH'])]
+    //#[Route('/accounts/{id}', name: 'account_update', methods: ['PUT', 'PATCH'])]
     public function update(int $id, Request $request, AccountRepository $repository): JsonResponse
     {
         $account = $repository->find($id);
@@ -70,7 +70,7 @@ class AccountController extends AbstractController
         ]);
     }
 
-    #[Route('/accounts/{id}', name: 'account_remove', methods: ['DELETE'])]
+    //#[Route('/accounts/{id}', name: 'account_remove', methods: ['DELETE'])]
     public function delete(int $id, AccountRepository $repository): JsonResponse
     {
         $account = $repository->find($id);
