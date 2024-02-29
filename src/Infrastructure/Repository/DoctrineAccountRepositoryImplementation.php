@@ -15,7 +15,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Account[]    findAll()
  * @method Account[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AccountRepository extends ServiceEntityRepository implements AccountRepositoryInterface
+class DoctrineAccountRepositoryImplementation extends ServiceEntityRepository implements AccountRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {

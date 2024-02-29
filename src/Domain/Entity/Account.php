@@ -2,11 +2,11 @@
 
 namespace App\Domain\Entity;
 
-use App\Infrastructure\Repository\AccountRepository;
+use App\Infrastructure\Repository\DoctrineAccountRepositoryImplementation;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AccountRepository::class)]
+#[ORM\Entity(repositoryClass: DoctrineAccountRepositoryImplementation::class)]
 #[ORM\Table(name: 'account')]
 class Account
 {
